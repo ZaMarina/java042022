@@ -6,22 +6,22 @@ import java.util.Random;
 public class Task3 {
     public static void main(String[] args) {
 
-//        exchangeNum();
-//        hundredElements();
-//        mathOperations();
-//        drawSquare();
-//      usersArray(8, 3);
-//searchMaxMin();
+        exchangeNum();
+        hundredElements();
+        mathOperations();
+        drawSquare();
+      usersArray(8, 3);
+searchMaxMin();
 //Задание 7
         int[] task7 = {1, 5, 6, 8, 9, 1, 8, 3, 7, 2, 4, 0};//false
         //int [] task7 = {1,5,6,8,7,1,8,5,7,2,4,0};//true
         equalHalves(task7);
         System.out.println(Arrays.toString(task7));// перервод в строку
         System.out.println(equalHalves(task7));
-        //Задание 8
-        int[] task8 = {1, 5, 6, 8,4};
+    //    Задание 8
+        int[] task8 = {1, 5, 6, 8, 4};
         mixtArray(task8, 2);
-        System.out.println(Arrays.toString(task8));
+
     }
 
     public static void drawSquare() {
@@ -97,38 +97,61 @@ public class Task3 {
         System.out.println("Minimal: " + min + ". Maximal: " + max);
     }
 
-    public static boolean equalHalves(int [] array){
+    public static boolean equalHalves(int[] array) {
 
         int leftSum = 0, rightSum = 0;
 
         for (int i = 0; i < array.length; i++) {
             leftSum += array[i];
         }
-            for (int j = 0; j < array.length; j++) {
-                rightSum+=array[j];
-                if (rightSum == leftSum - rightSum){
-                    return true;
+        for (int j = 0; j < array.length; j++) {
+            rightSum += array[j];
+            if (rightSum == leftSum - rightSum) {
+                return true;
 
-                }
-              //  System.out.println("leftSum " + leftSum + "; rightSum " + rightSum);
             }
+
+        }
 
         return false;
     }
 
-    public static void mixtArray(int [] array8, int number){
-        int temp;
-        for (int i = 0; i < number; i++) {
-            temp = array8[0];
-            for (int j = 0; j < array8.length; j++) {
-                array8[j] = array8[j+number];
-                array8[j] = temp;
+    public static void mixtArray(int[] array8, int number) {
+        System.out.println(Arrays.toString(array8));
+        int last = array8.length - 1;
 
+        for (int i = 0; i < array8.length; i++) {
+
+                array8[i] = array8[i+number];
             }
 
+        System.out.println(Arrays.toString(array8));
             }
+
+//        if (n > 0) {
+//            for (int j = 1; j < n; j++) {
+//                int element = array8[array8.length - 1];
+//                for (int i = 0; i < array8.length - 2; i--) {
+//                    array8[i + 1] = array8[i];
+//                }
+//                array8[0] = element;
+//            }
+//        } else {
+//            for (int j = n; j <= -1; j++) {
+//                int element = array8[0];
+//                for (int i = 1; i < array8.length; i++) {
+//                    array8[i - 1] = array8[i];
+//                }
+//                array8[array8.length - 1] = element;
+//                System.out.println(Arrays.toString(array8));
+//
+//            }
         }
-    }
+
+
+
+
+
 
 
 

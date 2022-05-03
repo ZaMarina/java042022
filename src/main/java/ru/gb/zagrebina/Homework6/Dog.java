@@ -1,26 +1,36 @@
 package ru.gb.zagrebina.Homework6;
 
 public class Dog extends Animal {
-    public static int canRun = 500;
-    public static int canSwim = 10;
-    public Dog(String name, int distanceRun, int distanceSwim) {
-        super(name, distanceRun, distanceSwim);
-          }
+    private static final int canSwim = 10;
+    private static final int canRun = 500;
+    private static int count;
 
+    public Dog(String name) {
+        super(name, canSwim, canRun);
+        count++;
+    }
+    public static int getCount() {
+        return count;
+    }
 
+    public static void setCount(int count) {
+        Dog.count = count;
+    }
     @Override
     public void run(int distanceRun) {
-        if (getDistanceRun()<=500) {
-            System.out.println("Собака " + getName() + " пробежал(а) " + super.getDistanceRun() + "метров");
-        }else {
-            System.out.println("Собака не пробежала");
+        if (distanceRun <= canRun) {
+            System.out.println(" Собака " + getName() + " пробежал(а) " + distanceRun + "метров");
+        } else {
+            System.out.println(" Собака " + getName() + " пробежал(а) 500 метров");
         }
     }
 
     @Override
     public void swim(int distanceRun) {
-        if (getDistanceSwim()<=10) {
-            System.out.println("Собака " + getName() + " проплыла(а) " + super.getDistanceSwim() + "метров");
+        if (distanceRun <= canSwim) {
+            System.out.println(" Собака " + getName() + " проплыл(а) " + distanceRun + "метров");
+        } else {
+            System.out.println(" Собака " + getName() + " проплыл(а) 10 метров");
         }
     }
 }

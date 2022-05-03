@@ -1,25 +1,35 @@
 package ru.gb.zagrebina.Homework6;
 
 public class Cat extends Animal {
+    private static final int canSwim = 0;
+    private static final int canRun = 200;
+    private static int count;
 
-    private static String canNotSwim = "Кот не умеет плавать!";
-    public Cat(String name, int distanceRun, int distanceSwim) {
-        super(name, distanceRun, distanceSwim);
-      }
+    public Cat(String name) {
+        super(name, canRun, canSwim);
+        count++;
+    }
 
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Cat.count = count;
+    }
 
     @Override
     public void run(int distanceRun) {
-        if (distanceRun <= 200) {
-            System.out.println("Кот " + getName() + " пробежал(а) " + super.getDistanceRun() + "метров");
-        }else {
-            System.out.println("Кот " + getName() + " пробежал(а) 200 метров");
+        if (distanceRun <= canRun) {
+            System.out.println(" Кот " + getName() + " пробежал(а) " + distanceRun + "метров");
+        } else {
+            System.out.println(" Кот " + getName() + " пробежал(а) 200 метров");
         }
+
     }
 
     @Override
-    public void swim(int distanceSwim) {
-        System.out.println(canNotSwim);
+    public void swim(int distanceRun) {
+        System.out.println(" Кот не умеет плавать!");
     }
-
 }

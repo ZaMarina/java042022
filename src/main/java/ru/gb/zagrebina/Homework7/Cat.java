@@ -11,18 +11,13 @@ public class Cat {
         this.satiety = satiety;
     }
 
-    public void eat(Plate p){//в скобках как int a
+    public void eat(Plate p){//в скобках (тип_переменная)
 p.decreaseFood(appetite);
-
 
     }
 
     public int getAppetite() {
         return appetite;
-    }
-
-    public boolean isSatiety() {
-        return satiety;
     }
 
     public void setSatiety(boolean satiety) {

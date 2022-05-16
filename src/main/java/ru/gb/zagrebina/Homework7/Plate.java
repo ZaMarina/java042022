@@ -2,14 +2,14 @@ package ru.gb.zagrebina.Homework7;
 
 public class Plate {
     private int food;
-    //Cat c;
+
     public Plate(int food) {
         setFood(food);
     }
 
 
     public void decreaseFood(int n){
-       // this.food = food;
+
                if ((food-n)>=0) {
                    food-=n;
 
